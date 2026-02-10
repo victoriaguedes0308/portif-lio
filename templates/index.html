@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="hero-content">
+                    <h6 class="subtitle text-uppercase">Olá, eu sou</h6>
+                    <h1 class="display-1 fw-bold mb-4">VICTORIA</h1>
+                    <h2 class="hero-subtitle mb-4">Tecnica de informática</h2>
+                    <p class="lead mb-4">
+                         Tenho 17 anos e sou estudante de Técnico em Informática. No curso, estudo fundamentos de tecnologia, lógica de programação, desenvolvimento de sistemas e redes. Tenho experiência com linguagens como HTML, CSS, JavaScript e outras ferramentas voltadas para criação de aplicações e soluções digitais. Busco sempre evoluir, aprender novas tecnologias e colocar o conhecimento em prática por meio de projetos, e transformo ideias em experiências digitais únicas e funcionais. 
+                        
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#projects" class="btn btn-primary btn-lg px-5 py-3">Ver Projetos</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='img/foto1victoria.jpg') }}" 
+                         alt="Victoria" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+            
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skills">
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">                                                  
+            
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                       
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">                                          
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                     
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h6 class="section-subtitle text-uppercase">Meus Trabalhos</h6>
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <div class="divider"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='img/labirintoprint.png') }}" 
+                             alt="Projeto 1" class="img-fluid">
+                        <div class="project-overlay">
+                            <a href="#" class="btn btn-primary">Ver Mais</a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4">
+                        <h5 class="mb-2">Jogo Labirinto</h5>
+                        <p class="text-muted mb-0">UI/UX Design • Desenvolvimento</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='img/appleprint.png') }}" 
+                             alt="Projeto 2" class="img-fluid">
+                        <div class="project-overlay">
+                            <a href="#" class="btn btn-primary">Ver Mais</a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4">
+                        <h5 class="mb-2">Inspiração Apple</h5>
+                        <p class="text-muted mb-0">UI Design • Prototipagem</p>
+                    </div>
+                </div>
+            </div>
+            
+          
+            
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h6 class="section-subtitle text-uppercase">Entre em Contato</h6>
+                <h2 class="section-title">Vamos Trabalhar Juntos</h2>
+                <div class="divider"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="contact-info">
+                    <div class="contact-item mb-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Localização</h5>
+                        <p class="text-muted">Espírito Santo, Brasil</p>
+                    </div>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Email</h5>
+                        <p class="text-muted">victoriaguedes01@gmail.com</p>
+                    </div>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-phone fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Telefone</h5>
+                        <p class="text-muted">+55 (27) 99742-1644</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <form class="contact-form" action="#" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Nome" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Assunto">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 px-5 py-3">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="social-section py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="divider mb-4"></div>
+                <div class="social-links d-flex justify-content-center gap-4">
+                    <a href="https://www.instagram.com/euvictorianeris?igsh=M3l0M2wzdHloeXIy&utm_source=qr" target="_blank" class="text-white" title="Instagram">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/victoria-guedes-neris-92b22836a/#:~:text=www.linkedin.com/in/victoria%2Dguedes%2Dneris%2D92b22836a" target="_blank" class="text-white" title="LinkedIn">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/seu_perfil" target="_blank" class="text-white" title="GitHub">
+                        <i class="fab fa-github fa-2x"></i>
+                    <a href="https://wa.me/5527997421644?text=" target="_blank" class="text-white" title="WhatsApp">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
