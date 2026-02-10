@@ -1,0 +1,669 @@
+/* ========================================
+   VARIÁVEIS E CONFIGURAÇÕES
+   ======================================== */
+   :root {
+    --primary-color: #9b59b6;        /* Roxo principal */
+    --secondary-color: #1a1a1a;       /* Preto escuro */
+    --accent-color: #8e44ad;          /* Roxo mais escuro */
+    --light-color: #f8f9fa;
+    --dark-color: #0a0a0a;            /* Fundo muito escuro */
+    --text-color: #f8f9fa;            /* Texto branco */
+    --text-light: #cccccc;            /* Texto cinza claro */
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    --border-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1.2rem 0;
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled {
+    background-color: var(--dark-color);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #fff !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-text {
+    position: relative;
+    display: inline-block;
+}
+
+.brand-text::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: var(--transition);
+}
+
+.brand-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    background: rgba(155, 89, 182, 0.1);
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
+/* ========================================
+   HERO SECTION - FUNDO ESCURO COM NOME BRANCO
+   ======================================== */
+.hero-section {
+    padding: 180px 0 100px;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(155, 89, 182, 0.15) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    color: var(--primary-color);      /* Olá, eu sou - ROXO */
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.display-1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    color: #ffffff;                       /* VICTORIA - BRANCO */
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);          /* Designer & Desenvolvedora - ROXO */
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image img {
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================
+   SECTIONS GERAIS
+   ======================================== */
+.section-subtitle {
+    color: var(--primary-color);          /* Subtítulos em ROXO */
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #f1efef;                        /* Títulos em BRANCO */
+    letter-spacing: -1px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);      /* Linha divisória em ROXO */
+    margin: 20px auto 40px;
+    border-radius: 2px;
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about-section {
+    padding: 100px 0;
+    background-color: #181818;             /* Fundo escuro */
+}
+
+.about-content p {
+    line-height: 1.8;
+    text-align: center; /* centraliza texto e elementos inline */
+    max-width: 600px;   /* limita largura máxima */
+    margin: 0 auto;     /* centraliza horizontalmente */
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--text-light);              /* Texto cinza claro */
+}
+
+.skill-item .progress {
+    background-color: #2a2a2a;             /* Fundo das barras escuro */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-item .progress-bar {
+    background-color: var(--primary-color); /* Barras de progresso em ROXO */
+    border-radius: 4px;
+    transition: width 1.5s ease;
+    animation: progressAnimation 2s ease;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+}
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+.projects-section {
+    padding: 100px 0;
+    background-color: #0f0f0f;             /* Fundo escuro */
+}
+
+.project-card {
+    background: #1a1a1a;                   /* Cartões escuros */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(155, 89, 182, 0.85); /* Overlay roxo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay .btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+    background: #000000;
+    color: var(--primary-color);
+    border: 2px solid #fff;
+}
+
+.project-overlay .btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(0);
+}
+
+.project-card:hover .project-overlay .btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-info h5 {
+    font-weight: 600;
+    color: #ffffff;                        /* Títulos dos projetos em BRANCO */
+    font-size: 1.2rem;
+}
+
+.project-info p {
+    color: var(--text-light);              /* Descrições em cinza claro */
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(10, 10, 10, 0.95) 100%);
+}
+
+.contact-item {
+    text-align: center;
+    padding: 30px;
+    background: #1a1a1a;                   /* Fundo escuro */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-item .icon {
+    color: var(--primary-color);           /* Ícones em ROXO */
+    margin-bottom: 15px;
+}
+
+.contact-item h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;                        /* Títulos em BRANCO */
+}
+
+.contact-item .text-muted {
+    color: var(--text-light) !important;   /* Textos em cinza claro */
+}
+
+.contact-form .form-control {
+    border: 2px solid #2a2a2a;             /* Bordas escuras */
+    padding: 15px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-size: 1rem;
+    background-color: #1a1a1a;             /* Fundo escuro */
+    color: #ffffff;                        /* Texto branco */
+}
+
+.contact-form .form-control::placeholder {
+    color: var(--text-light);              /* Placeholder cinza claro */
+    opacity: 0.6;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.3);
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.contact-form .btn {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+
+/* ========================================
+   PAGE HERO
+   ======================================== */
+.page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: #fff;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.page-hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   CONTACT PAGE
+   ======================================== */
+.contact-page {
+    padding: 80px 0;
+    background-color: #121212;             /* Fundo escuro */
+}
+
+.contact-form-wrapper {
+    background: #1a1a1a;                   /* Fundo escuro */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-form-wrapper h4 {
+    color: #ffffff;                        /* Títulos em BRANCO */
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 60px 0 30px;
+    margin-top: 100px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.footer h5 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.footer .text-muted {
+    color: var(--text-light) !important;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff !important;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none;
+    border: 2px solid rgba(155, 89, 182, 0.3);
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    color: #fff !important;
+    border-color: var(--primary-color);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 12px 30px;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary-color);      /* Botões principais em ROXO */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(155, 89, 182, 0.5);
+}
+
+.btn-outline-light {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 992px) {
+    .display-1 {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-section {
+        padding: 150px 0 80px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section {
+        padding: 120px 0 60px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content,
+    .hero-image {
+        text-align: center;
+    }
+    
+    .d-flex.gap-3 {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle,
+    .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .hero-section {
+        padding: 100px 0 50px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-hero p {
+        font-size: 1rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .contact-item {
+        padding: 20px;
+    }
+}
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.rounded {
+    border-radius: var(--border-radius) !important;
+}
+
+/* ========================================
+   CORREÇÃO PARA SEÇÃO DE PROJETOS
+   ======================================== */
+   .projects-section {
+    background-color: #0f0f0f !important;
+}
+
+#projects h2.section-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#projects .project-card h5 {
+    color: #ffffff !important;
+}
